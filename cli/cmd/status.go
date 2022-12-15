@@ -50,7 +50,7 @@ func newStatusCmd() *cobra.Command {
 			hostname := args[0]
 			cert, err := verifyCoordinator(hostname, eraConfig, insecureEra)
 			if err != nil {
-				return err
+				//				return err
 			}
 			return cliStatus(hostname, cert)
 		},
@@ -72,7 +72,7 @@ func cliStatus(host string, cert []*pem.Block) error {
 
 	resp, err := client.Get("https://" + host + "/status")
 	if err != nil {
-		return err
+		//		return err
 	}
 
 	defer resp.Body.Close()

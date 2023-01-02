@@ -50,7 +50,7 @@ func newStatusCmd() *cobra.Command {
 			hostname := args[0]
 			cert, err := verifyCoordinator(hostname, eraConfig, insecureEra, acceptedTcbLevels)
 			if err != nil {
-				//				return err
+				return err
 			}
 			return cliStatus(hostname, cert)
 		},

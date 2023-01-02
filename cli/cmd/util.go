@@ -22,6 +22,7 @@ import (
 
 	"github.com/edgelesssys/ego/attestation"
 	"github.com/edgelesssys/era/era"
+	"github.com/edgelesssys/era/util"
 	"k8s.io/apimachinery/pkg/util/version"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/tools/clientcmd"
@@ -61,7 +62,7 @@ func verifyCoordinator(host string, configFilename string, insecure bool, accept
 	// get certificate using provided config
 	if configFilename != "" {
 		pemBlock, _, err := era.GetCertificate(host, configFilename)
-		if err == attestation.ErrTCBLevelInvalid && len(acceptedTcbLevels) > 0 {
+		if err == attestation.ErrTCBLevelInvalid && util.StringSliceContains(acceptedTcbLevels, tcbLevel) {
 			fmt.Println("Warning: TCB level invalid, but accepted by configuration")
 			return pemBlock, nil
 		}

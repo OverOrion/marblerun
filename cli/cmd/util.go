@@ -20,7 +20,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/OverOrion/ego/attestation"
+	"github.com/edgelesssys/ego/attestation"
 	"github.com/edgelesssys/era/era"
 	"k8s.io/apimachinery/pkg/util/version"
 	"k8s.io/client-go/kubernetes"

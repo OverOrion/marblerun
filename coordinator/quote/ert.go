@@ -9,7 +9,6 @@ package quote
 import (
 	"strings"
 
-	"github.com/edgelesssys/era/util"
 	"github.com/google/go-cmp/cmp"
 )
 
@@ -26,8 +25,6 @@ type PackageProperties struct {
 	ProductID *uint64
 	// Security version number of the package
 	SecurityVersion *uint
-	// List of Accepted TCB levels
-	AcceptedTcbLevels []string
 }
 
 // InfrastructureProperties contains the infrastructure-specific properties of a SGX DCAP quote
@@ -43,22 +40,9 @@ type InfrastructureProperties struct {
 	RootCA []byte
 }
 
-// CheckTcbLevels checks if the given package properties are acceptable.
-func (required PackageProperties) CheckTcbLevels(given PackageProperties) bool {
-	for _, tcbLevel := range given.AcceptedTcbLevels {
-		if util.StringSliceContains(required.AcceptedTcbLevels, tcbLevel) {
-			return true
-		}
-	}
-	return false
-}
-
 // IsCompliant checks if the given package properties comply with the requirements.
 func (required PackageProperties) IsCompliant(given PackageProperties) bool {
 	if required.Debug != given.Debug {
-		return false
-	}
-	if len(required.AcceptedTcbLevels) > 0 && !required.CheckTcbLevels(given) {
 		return false
 	}
 	if len(required.UniqueID) > 0 && !strings.EqualFold(required.UniqueID, given.UniqueID) {

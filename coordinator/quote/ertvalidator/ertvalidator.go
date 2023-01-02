@@ -42,12 +42,11 @@ func (m *ERTValidator) Validate(givenQuote []byte, cert []byte, pp quote.Package
 	// Verify PackageProperties
 	productID := binary.LittleEndian.Uint64(report.ProductID)
 	reportedProps := quote.PackageProperties{
-		UniqueID:          hex.EncodeToString(report.UniqueID),
-		SignerID:          hex.EncodeToString(report.SignerID),
-		Debug:             report.Debug,
-		ProductID:         &productID,
-		SecurityVersion:   &report.SecurityVersion,
-		AcceptedTcbLevels: []string{report.TCBStatus.String()},
+		UniqueID:        hex.EncodeToString(report.UniqueID),
+		SignerID:        hex.EncodeToString(report.SignerID),
+		Debug:           report.Debug,
+		ProductID:       &productID,
+		SecurityVersion: &report.SecurityVersion,
 	}
 	if !pp.IsCompliant(reportedProps) {
 		return fmt.Errorf("PackageProperties not compliant:\n%v\n%v", reportedProps, pp)

@@ -348,12 +348,11 @@ func (c *Core) UpdateManifest(ctx context.Context, rawUpdateManifest []byte, upd
 		if currentPackages[pkgName].SecurityVersion == nil {
 			currentPkg := currentPackages[pkgName]
 			currentPackages[pkgName] = quote.PackageProperties{
-				Debug:             currentPkg.Debug,
-				UniqueID:          currentPkg.UniqueID,
-				SecurityVersion:   pkg.SecurityVersion,
-				ProductID:         currentPkg.ProductID,
-				SignerID:          currentPkg.SignerID,
-				AcceptedTcbLevels: currentPkg.AcceptedTcbLevels,
+				Debug:           currentPkg.Debug,
+				UniqueID:        currentPkg.UniqueID,
+				SecurityVersion: pkg.SecurityVersion,
+				ProductID:       currentPkg.ProductID,
+				SignerID:        currentPkg.SignerID,
 			}
 		} else {
 			*currentPackages[pkgName].SecurityVersion = *pkg.SecurityVersion

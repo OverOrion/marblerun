@@ -24,19 +24,20 @@ func newCertificateChain() *cobra.Command {
 		Args:  cobra.ExactArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			hostName := args[0]
-			return cliCertificateChain(hostName, certFilename, eraConfig, insecureEra)
+			return cliCertificateChain(hostName, certFilename, eraConfig, insecureEra, acceptedTcbLevels)
 		},
 		SilenceUsage: true,
 	}
 
 	cmd.Flags().StringVarP(&certFilename, "output", "o", "marblerunChainCA.crt", "File to save the certificate to")
+	cmd.PersistentFlags().StringSliceVar(&acceptedTcbLevels, "accepted-tcb-levels", []string{"UpToDate"}, "Coma seperated list of user accepted TCB levels (e.g. ConfigurationNeeded,ConfigurationAndSWHardeningNeeded)")
 
 	return cmd
 }
 
 // cliCertificateChain gets the certificate chain of the MarbleRun Coordinator.
-func cliCertificateChain(host string, output string, configFilename string, insecure bool) error {
-	certs, err := verifyCoordinator(host, configFilename, insecure)
+func cliCertificateChain(host string, output string, configFilename string, insecure bool, acceptedTcbLevels []string) error {
+	certs, err := verifyCoordinator(host, configFilename, insecure, acceptedTcbLevels)
 	if err != nil {
 		return err
 	}

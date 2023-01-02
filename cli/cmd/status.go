@@ -72,7 +72,7 @@ func cliStatus(host string, cert []*pem.Block) error {
 
 	resp, err := client.Get("https://" + host + "/status")
 	if err != nil {
-		//		return err
+		return err
 	}
 
 	defer resp.Body.Close()

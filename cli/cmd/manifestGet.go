@@ -31,7 +31,7 @@ Optionally get the manifests signature or merge updates into the displayed manif
 		Args: cobra.ExactArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			hostName := args[0]
-			cert, err := verifyCoordinator(hostName, eraConfig, insecureEra)
+			cert, err := verifyCoordinator(hostName, eraConfig, insecureEra, acceptedTcbLevels)
 			if err != nil {
 				return err
 			}
@@ -61,6 +61,7 @@ Optionally get the manifests signature or merge updates into the displayed manif
 	cmd.Flags().BoolVarP(&signature, "signature", "s", false, "Set to additionally display the manifests signature")
 	cmd.Flags().BoolVarP(&displayUpdate, "display-update", "u", false, "Set to merge updates into the displayed manifest")
 	cmd.Flags().StringVarP(&output, "output", "o", "", "Save output to file instead of printing to stdout")
+	cmd.PersistentFlags().StringSliceVar(&acceptedTcbLevels, "accepted-tcb-levels", []string{"UpToDate"}, "Coma seperated list of user accepted TCB levels (e.g. ConfigurationNeeded,ConfigurationAndSWHardeningNeeded)")
 	return cmd
 }
 

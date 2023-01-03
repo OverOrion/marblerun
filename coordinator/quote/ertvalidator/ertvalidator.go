@@ -13,7 +13,9 @@ import (
 	"encoding/hex"
 	"fmt"
 
+	"github.com/edgelesssys/ego/attestation"
 	"github.com/edgelesssys/ego/enclave"
+	"github.com/edgelesssys/era/util"
 	"github.com/edgelesssys/marblerun/coordinator/quote"
 )
 
@@ -30,7 +32,11 @@ func (m *ERTValidator) Validate(givenQuote []byte, cert []byte, pp quote.Package
 	// Verify Quote
 	report, err := enclave.VerifyRemoteReport(givenQuote)
 	if err != nil {
-		return fmt.Errorf("verifying quote failed: %v", err)
+		if err == attestation.ErrTCBLevelInvalid && util.StringSliceContains(pp.AcceptedTcbLevels, report.TCBStatus.String()) {
+			fmt.Println("Warning: TCB level invalid, but accepted by configuration")
+		} else {
+			return fmt.Errorf("verifying quote failed: %v", err)
+		}
 	}
 
 	// Check that cert is equal

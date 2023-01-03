@@ -25,6 +25,8 @@ type PackageProperties struct {
 	ProductID *uint64
 	// Security version number of the package
 	SecurityVersion *uint
+	// Accepted TCB levels
+	AcceptedTcbLevels []string
 }
 
 // InfrastructureProperties contains the infrastructure-specific properties of a SGX DCAP quote

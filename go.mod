@@ -160,3 +160,5 @@ require (
 replace github.com/edgelesssys/marblerun v0.6.1 => github.com/OverOrion/marblerun v0.6.2-0.20230104094428-c73b8bd5d8ce
 
 replace github.com/edgelesssys/ego v1.0.1 => github.com/OverOrion/ego v1.1.1-0.20230104095604-57f6889e5a7f
+
+replace github.com/edgelesssys/era v0.3.3 => github.com/OverOrion/era v0.3.4-0.20230104101240-c3d9fc160a68

@@ -157,4 +157,4 @@ require (
 	sigs.k8s.io/structured-merge-diff/v4 v4.2.3 // indirect
 )
 
-replace github.com/edgelesssys/marblerun => github.com/OverOrion/marblerun v0.6.2-0.20230104090900-f869552668aa
+replace github.com/edgelesssys/marblerun v0.6.1 => github.com/OverOrion/marblerun v0.6.2-0.20230104094428-c73b8bd5d8ce

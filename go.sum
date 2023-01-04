@@ -139,8 +139,8 @@ github.com/Microsoft/hcsshim/test v0.0.0-20210227013316-43a75bb4edd3/go.mod h1:m
 github.com/NYTimes/gziphandler v0.0.0-20170623195520-56545f4a5d46/go.mod h1:3wb06e3pkSAbeQ52E9H9iFoQsEEwGN64994WTCIhntQ=
 github.com/NYTimes/gziphandler v1.1.1/go.mod h1:n/CVRwUEOgIxrgPvAQhUUr9oeUtvrhMomdKFjzJNB0c=
 github.com/OneOfOne/xxhash v1.2.2/go.mod h1:HSdplMjZKSmBqAxg5vPj2TmRDmfkzw+cTzAElWljhcU=
-github.com/OverOrion/marblerun v0.6.2-0.20230104090900-f869552668aa h1:S6qc4JT97LEMJ6RmbNwjI7sgH2vs7UevMpmDqh9dc/Y=
-github.com/OverOrion/marblerun v0.6.2-0.20230104090900-f869552668aa/go.mod h1:Hbx7erwqM13BMEMiPJA4M7Y7AKM3szmvDl5FcUpQgqI=
+github.com/OverOrion/marblerun v0.6.2-0.20230104094428-c73b8bd5d8ce h1:oh7WY6gseP2cvGt3B9onPkQjVP/hV0aNZO6UGh2edCQ=
+github.com/OverOrion/marblerun v0.6.2-0.20230104094428-c73b8bd5d8ce/go.mod h1:uhGOF64Ymy7bmMTBuusUB+fEGeLjxlXz1BC+QDqQUFQ=
 github.com/PuerkitoBio/purell v1.0.0/go.mod h1:c11w/QuzBsJSee3cPx9rAFu61PvFxuPbtSwDGJws/X0=
 github.com/PuerkitoBio/purell v1.1.1/go.mod h1:c11w/QuzBsJSee3cPx9rAFu61PvFxuPbtSwDGJws/X0=
 github.com/PuerkitoBio/urlesc v0.0.0-20160726150825-5bd2802263f2/go.mod h1:uGdkoq3SwY9Y+13GIhn11/XLaGBb4BfwItxLd5jeuXE=

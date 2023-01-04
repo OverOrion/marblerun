@@ -1,4 +1,4 @@
-module github.com/edgelesssys/marblerun
+module github.com/OverOrion/marblerun
 
 go 1.17
 
@@ -6,6 +6,7 @@ require (
 	github.com/c2h5oh/datasize v0.0.0-20220606134207-859f65c6625b
 	github.com/edgelesssys/ego v1.0.1
 	github.com/edgelesssys/era v0.3.3
+	github.com/edgelesssys/marblerun v0.6.1
 	github.com/fatih/color v1.13.0
 	github.com/gofrs/flock v0.8.1
 	github.com/google/go-cmp v0.5.8
@@ -155,3 +156,5 @@ require (
 	sigs.k8s.io/kustomize/kyaml v0.13.9 // indirect
 	sigs.k8s.io/structured-merge-diff/v4 v4.2.3 // indirect
 )
+
+replace github.com/edgelesssys/marblerun => github.com/OverOrion/marblerun v0.6.2-0.20230104090900-f869552668aa

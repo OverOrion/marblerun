@@ -85,7 +85,7 @@ add_custom_target(cli ALL
   COMMAND
   ${CMAKE_COMMAND} -P ${CMAKE_SOURCE_DIR}/build_with_version.cmake
   "go" "${PROJECT_VERSION}" "marblerun"
-  "${CMAKE_SOURCE_DIR}/cli" "github.com/edgelesssys/marblerun/cli/cmd"
+  "${CMAKE_SOURCE_DIR}/cli" "github.com/OverOrion/marblerun/cli/cmd"
   ${TRIMPATH}
 )
 

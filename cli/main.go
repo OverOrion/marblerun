@@ -9,7 +9,7 @@ package main
 import (
 	"os"
 
-	"github.com/edgelesssys/marblerun/cli/cmd"
+	"github.com/OverOrion/marblerun/cli/cmd"
 )
 
 func main() {

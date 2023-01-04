@@ -35,7 +35,7 @@ func (m *ERTValidator) Validate(givenQuote []byte, cert []byte, pp quote.Package
 		if err == attestation.ErrTCBLevelInvalid && util.StringSliceContains(pp.AcceptedTcbLevels, report.TCBStatus.String()) {
 			fmt.Println("Warning: TCB level invalid, but accepted by configuration")
 		} else {
-			return fmt.Errorf("verifying quote failed: %v", err)
+			return fmt.Errorf("PATCH verifying quote failed: %v", err)
 		}
 	}
 
